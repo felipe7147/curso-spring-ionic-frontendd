@@ -11,21 +11,18 @@ export class StorageService {
         if (usr == null) {
             return null;
         }
-        else{
-            return JSON.parse(usr)
+        else {
+            return JSON.parse(usr);
         }
-
     }
 
-    setLocalUser(obj: LocalUser) {
-       
+    setLocalUser(obj : LocalUser) {
         if (obj == null) {
             localStorage.removeItem(STORAGE_KEYS.localUser);
         }
-        else{
+        else {
             localStorage.setItem(STORAGE_KEYS.localUser, JSON.stringify(obj));
         }
-
     }
 
     getCart() : Cart {
@@ -37,7 +34,7 @@ export class StorageService {
             return null;
         }
     }
-
+    
     setCart(obj : Cart) {
         if (obj != null) {
             localStorage.setItem(STORAGE_KEYS.cart, JSON.stringify(obj));
