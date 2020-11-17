@@ -33,11 +33,12 @@ export class CartPage {
       let item = this.items[i];
       this.produtoService.getSmallImageFromBucket(item.produto.id)
         .subscribe(response => {
-          item.produto.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.produto.id}.jpg`;
+          item.produto.imageUrl = `${API_CONFIG.bucketBaseUrl}/prod${item.produto.id}-small.jpg`;
         },
         error => {});
     }
-  }
+  }  
+
   removeItem(produto: ProdutoDTO) {
     this.items = this.cartService.removeProduto(produto).items;
   }

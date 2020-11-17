@@ -52,6 +52,7 @@ export class OrderConfirmationPage {
   total() : number {
     return this.cartService.total();
   } 
+
   back() {
     this.navCtrl.setRoot('CartPage');
   }
@@ -59,7 +60,6 @@ export class OrderConfirmationPage {
   home() {
     this.navCtrl.setRoot('CategoriasPage');
   }
-
 
   checkout() {
     this.pedidoService.insert(this.pedido)
@@ -73,8 +73,9 @@ export class OrderConfirmationPage {
         }
       });
   }
+
   private extractId(location : string) : string {
     let position = location.lastIndexOf('/');
     return location.substring(position + 1, location.length);
   }
-}
+} 
